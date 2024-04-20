@@ -1,0 +1,277 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Sans-Serif;
+}
+
+.navbar {
+  width: 100%;
+  height: 60px;
+  padding: 0px 10px;
+  background-color: #2068f8;
+  box-shadow: 0px 4px 10px #a0bdf8;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  align-items: center;
+  color: #fff;
+}
+
+.nameAndIcon {
+  height: 42px;
+  padding: 0px 5px;
+  background-color: #17226D;
+  border-radius: 8px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.icon {
+  height: 80%;
+  width: 25%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.icon img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+form {
+  height: 7%;
+  width: 80%;
+  border-radius: 8px;
+  box-shadow: -1px 15px 15px 10px rgba(0, 0, 0, 0.1);
+  margin: 15px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 8px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.label {
+  width: 90%;
+  height: 50%;
+  border: 2px solid gray;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5vw;
+  font-weight: 700;
+}
+
+.content {
+  display: none;
+  min-width: 10%;
+  max-width: 90%;
+  min-height: 10%;
+  max-height: 50%;
+}
+
+.content img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border: 2px solid gray;
+  padding: 2px;
+  border-radius: 8px;
+}
+
+.content #result {
+  display: none;
+  background-size: contain;
+  background-image: url('../assets/Bgrn.jpg');
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite;
+}
+
+.loader::before,
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 5px solid red;
+  animation: prixClipFix 2s linear infinite;
+}
+
+.loader::after {
+  border-color: #FF3D00;
+  animation: prixClipFix 2s linear infinite, rotate 0.5s linear infinite reverse;
+  inset: 6px;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg)
+  }
+
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes prixClipFix {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0)
+  }
+
+  25% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0)
+  }
+
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%)
+  }
+
+  75% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%)
+  }
+
+  100% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0)
+  }
+}
+
+.btnInput {
+  background-color: red;
+  z-index: 9999;
+  display: none;
+}
+
+.inputImage {
+  background-color: #2068f8;
+  box-shadow: 9px 9px 14px 0 rgba(0, 0, 0, 0.25), -5px -5px 9px 0 rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  display: flex;
+  width: 30%;
+  height: 65%;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-right: 4rem;
+  color: #fff;
+  font-size: 4vw;
+  font-weight: 600;
+}
+
+
+.btnRemove {
+  width: 10%;
+  height: 60%;
+  padding: 0 5px;
+  display: flex;
+  gap: 5px;
+  justify-content: space-evenly;
+  align-items: center;
+  border: none;
+  color: #fff;
+  background-color: #2068f8;
+  box-shadow: 9px 9px 14px 0 rgba(0, 0, 0, 0.25), -5px -5px 9px 0 rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+  transition: width 0.5s ease;
+  border-radius: 8px;
+  font-size: 4vw;
+}
+
+.btnRemove .fa-arrow-right {
+  transition: transform 1s ease;
+}
+
+.labelDownload {
+  display:none ;
+}
+
+.labelDownload p {
+  color: #fff;
+  font-weight: 600;
+}
+
+.loader-remove {
+  color: #fff;
+  display: none;
+  font-size: 1vw;
+  width: 20%;
+  height: 20%;
+  border-radius: 50%;
+  position: ;
+  text-indent: -999em;
+  animation: mulShdSpin 1.3s infinite linear;
+  transform: translateZ(0);
+}
+
+
+@keyframes mulShdSpin {
+  0%,
+  100% {
+    box-shadow: 0 -3em 0 0.2em, 
+    2em -2em 0 0em, 3em 0 0 -1em, 
+    2em 2em 0 -1em, 0 3em 0 -1em, 
+    -2em 2em 0 -1em, -3em 0 0 -1em, 
+    -2em -2em 0 0;
+  }
+  12.5% {
+    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 
+    3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, 
+    -2em 2em 0 -1em, -3em 0 0 -1em, 
+    -2em -2em 0 -1em;
+  }
+  25% {
+    box-shadow: 0 -3em 0 -0.5em, 
+    2em -2em 0 0, 3em 0 0 0.2em, 
+    2em 2em 0 0, 0 3em 0 -1em, 
+    -2em 2em 0 -1em, -3em 0 0 -1em, 
+    -2em -2em 0 -1em;
+  }
+  37.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
+     3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, 
+     -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  50% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
+     3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, 
+     -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  62.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
+     3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, 
+     -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+  }
+  75% {
+    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 
+    3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, 
+    -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+  }
+  87.5% {
+    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 
+    3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, 
+    -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+  }
+}

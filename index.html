@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Remove background</title>
+</head>
+<body>
+  <div class="navbar">
+    <div class="nameAndIcon">
+      <div class="icon">
+        <span> <img src="assets/icon2.png" alt=""></span>
+      </div>
+      <div class="name">
+        <h2>Remove.bg</h2>
+      </div>
+    </div>
+ </div>
+  </div>
+  <div class="label">
+    <label for="input">
+      <p>Masukan Gambar</p>
+    </label>
+  </div>
+  <div class="content">
+    <img src="" alt="" id="hasilInput">
+    <img src="" alt="" id="result">
+    <div class="container-loader"></div>
+  </div>
+  <form action="" id="form">
+    <label class="inputImage" for="input">
+      <i class="fa fa-upload " aria-hidden="true"></i>
+      <p>UPLOAD</p>
+    </label>
+    <input class="btnInput" type="file" id="input" />
+    <button type="submit" class="btnRemove" id="button">
+      <span class="labelDownload"><p>Download</p></span>
+      <i class="fa-solid  fa-arrow-right"></i>
+      <i style="display:none;" class="fa-solid fa-arrow-down"></i>
+      <div class="loader-remove"></div>
+    </button>
+  </form>
+  <script src="js/index.js"></script>
+</body>
+</html>
